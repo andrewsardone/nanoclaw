@@ -55,6 +55,35 @@ systemctl --user stop nanoclaw
 systemctl --user restart nanoclaw
 ```
 
+## Git Commit Conventions
+
+This repo follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+Format: `type: short summary` (max 50 chars, imperative mood, no period)
+
+Types: `feat`, `fix`, `refactor`, `docs`, `chore`, `test`, `ci`
+
+Body (when needed): blank line after subject, lines wrapped at 72 chars, focus on
+rationale not implementation, use `- ` bullet points.
+
+Example:
+```
+feat: add WhatsApp channel via Baileys
+
+Adds WhatsApp as a messaging channel. Configured for a dedicated bot
+number, which means no name prefix on outgoing messages and reliable
+fromMe detection for filtering bot output.
+
+- src/channels/whatsapp.ts: connection management, inbound dispatch,
+  outgoing queue for reconnect resilience
+- package.json: add @whiskeysockets/baileys, qrcode dependencies
+```
+
+Atomic commits — split by concern:
+- 3+ modified files → minimum 2 commits
+- 5+ modified files → minimum 3 commits
+- Files belong together only when deeply interdependent (e.g. code + its tests)
+
 ## Troubleshooting
 
 **WhatsApp not connecting after upgrade:** WhatsApp is now a separate skill, not bundled in core. Run `/add-whatsapp` (or `npx tsx scripts/apply-skill.ts .claude/skills/add-whatsapp && npm run build`) to install it. Existing auth credentials and groups are preserved.

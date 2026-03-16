@@ -91,6 +91,7 @@ Then run `/setup`. Claude Code handles everything: dependencies, authentication,
 - **Container isolation** - Agents are sandboxed in [Docker Sandboxes](https://nanoclaw.dev/blog/nanoclaw-docker-sandboxes) (micro VM isolation), Apple Container (macOS), or Docker (macOS/Linux)
 - **Agent Swarms** - Spin up teams of specialized agents that collaborate on complex tasks
 - **Optional integrations** - Add Gmail (`/add-gmail`) and more via skills
+- **Session management** - Send `/compact` to summarize and truncate conversation history when sessions grow long
 
 ## Usage
 
@@ -136,9 +137,6 @@ Skills we'd like to see:
 
 **Communication Channels**
 - `/add-signal` - Add Signal as a channel
-
-**Session Management**
-- `/clear` - Add a `/clear` command that compacts the conversation (summarizes context while preserving critical information in the same session). Requires figuring out how to trigger compaction programmatically via the Claude Agent SDK.
 
 ## Requirements
 

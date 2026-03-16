@@ -36,6 +36,9 @@ Single Node.js process with skill-based channel system. Channels (WhatsApp, Tele
 
 ## Development
 
+Node is managed via [mise](https://github.com/jdx/mise) (`mise.toml`). Run commands with
+`eval "$(mise env --shell=zsh)"` first, or prefix with `mise exec --`.
+
 Run commands directly—don't tell the user to run them.
 
 ```bash

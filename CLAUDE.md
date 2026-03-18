@@ -19,7 +19,7 @@ Single Node.js process with skill-based channel system. Channels (WhatsApp, Tele
 | `src/task-scheduler.ts` | Runs scheduled tasks |
 | `src/db.ts` | SQLite operations |
 | `src/session-commands.ts` | Session slash commands (/compact) |
-| `groups/{name}/CLAUDE.md` | Per-group memory (isolated) |
+| `groups/{name}/CLAUDE.md` | Per-group memory (isolated) — `groups/` is a symlink to `~/hugo-memory` (private git repo) |
 | `container/skills/agent-browser.md` | Browser automation tool (available to all agents via Bash) |
 
 ## Skills
@@ -88,6 +88,12 @@ Atomic commits — split by concern:
 - 3+ modified files → minimum 2 commits
 - 5+ modified files → minimum 3 commits
 - Files belong together only when deeply interdependent (e.g. code + its tests)
+
+## Hugo Memory
+
+`groups/` is a symlink to `~/hugo-memory`, a separate private git repo that holds
+Hugo's identity, memory files, and session logs. Edit group CLAUDE.md files there,
+not here. See `~/hugo-memory/CLAUDE.md` for the full ownership and workflow guide.
 
 ## Troubleshooting
 
